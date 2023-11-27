@@ -68,7 +68,7 @@ def change_project_json(path:str,project_name:str, render_api = "AZ_RENDER_API_O
     data = json.load(json_file)
     data["project"]["name"] = project_name
     data["project"]["render_api"] = render_api
-    data["project"]["cmake_minimum_version"] = int(cmake_version)
+    data["project"]["cmake_minimum_version"] = float(cmake_version)
     json_formatted_str = json.dumps(data, indent=2)
     json_file.close()
     json_file = open(json_path,"w")
