@@ -83,9 +83,9 @@ def clone_repo(project_name:str, project_path:str,vcpkg:bool = False):
             return False
     color_print(f"Creating '{project_name}' at '{project_path}'","green")
     if(vcpkg):
-        os.system(f"git clone --recursive https://github.com/Byte-White/Appazoid-Project-Template-VCPKG \"{project_whole_path}\"")        
+        os.system(f"git clone --depth 1 --recursive https://github.com/Byte-White/Appazoid-Project-Template-VCPKG \"{project_whole_path}\"")        
     else:
-        os.system(f"git clone --recursive https://github.com/Byte-White/Appazoid-Project-Template \"{project_whole_path}\"")
+        os.system(f"git clone --depth 1 --recursive https://github.com/Byte-White/Appazoid-Project-Template \"{project_whole_path}\"")
     return True
 
 @app.command()
